@@ -7,9 +7,10 @@ import java.util.Arrays;
  */
 public class I1 {
     public static void main(String[] args) {
-        int[] arr = {1,3,5,7,8,10};
+        System.out.println(Math.max(8,8));
+        int[] arr = {3,1,5,7,8,10};
         System.out.println(rob(arr));
-        System.out.println(rob2(arr));
+
     }
     public static int rob(int[] nums){
         if(nums ==null ||nums.length ==0) return 0;
@@ -24,18 +25,4 @@ public class I1 {
         return dp[nums.length-1];
     }
 
-    public static int rob2(int[] nums){
-        if(nums ==null ||nums.length ==0) return 0;
-        if(nums.length ==1) return  nums[0];
-        int sum1 = 0;
-        int sum2 = 0;
-        for (int i = 0 ;i<nums.length;i++){
-            if(i%2 ==0 ){
-                sum1+=nums[i];
-            }else{
-                sum2+=nums[i];
-            }
-        }
-        return sum1 >= sum2 ? sum1 : sum2;
-    }
 }
